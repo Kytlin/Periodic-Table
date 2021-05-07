@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from graph import first_IE 
 import periodictable
 
 # Global variables
@@ -25,6 +26,9 @@ def more_info(blocks, i):
     top.rowconfigure(0, weight=1)
 
     labelExample = Label(top, text="{} ({})".format(blocks[i]["name"], blocks[i]["symbol"]), height=3, width=30).grid(column=0, row=0)
+
+    graph_1 = Button(top, text="See First Ionization Energies", width=30, height=5, command=first_IE)
+    graph_1.grid(column=0, row=1, sticky=(N, W, E, S))
 
 def add_block(mainframe, blocks, block, grid_index, atomic_num):
     row_index = grid_index // grid_col
